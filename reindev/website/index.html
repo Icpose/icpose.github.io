@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReIndev</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/reindev/assets/css/foundation.css" />
+    <link rel="stylesheet" href="/reindev/assets/css/reindev.css" />
+  </head>
+  <body>
+    <!--
+      <main class="loading-screen">
+      <main id="preload-dirt"></main>
+      <img
+        src="https://cdn.discordapp.com/attachments/1087026342157111387/1103658133106208869/image.png"
+        width="300"
+        class="mb-5"
+      />
+      <div class="loading-subtitle">Not Affiliated With</div>
+      <div class="loading-title">Mojang Specifications</div>
+    </main>
+    -->
+    <main class="website-panorama">
+      <div class="panorama-0"></div>
+      <div class="panorama-1"></div>
+      <div class="panorama-2"></div>
+      <div class="panorama-3"></div>
+    </main>
+    <div
+      class="social-buttons"
+      style="position: absolute; left: 4px; top: 4px; max-width: 99%"
+    >
+      <a href="#" class="social-button discord">
+        <span class="icon"><img src="/reindev/assets/img/discord.png" /></span>
+        <span class="social-text">
+          <div class="social-text-content">Discord Server</div>
+        </span>
+      </a>
+      <a href="#" class="social-button youtube">
+        <span class="icon"><img src="/reindev/assets/img/youtube.png" /></span>
+        <span class="social-text">
+          <div class="social-text-content">YouTube Channel</div>
+        </span>
+      </a>
+      <a href="#" class="social-button reddit">
+        <span class="icon"><img src="/reindev/assets/img/reddit.png" /></span>
+        <span class="social-text">
+          <div class="social-text-content">Reddit</div>
+        </span>
+      </a>
+      <a href="#" class="social-button kofi">
+        <span class="icon"><img src="/reindev/assets/img/kofi.png" /></span>
+        <span class="social-text">
+          <div class="social-text-content">Support us on Ko-fi</div>
+        </span>
+      </a>
+    </div>
+    <div style="position: absolute; left: 4px; bottom: 4px; max-width: 99%">
+      <div class="title-screen-text text-truncate">
+        Website created by
+        <a href="https://twitter.com/nabrious" target="_blank">Nabrious</a>.
+      </div>
+      <div class="title-screen-text text-truncate">
+        Copyright ReIndev 2023. All rights reserved.
+      </div>
+      <div class="title-screen-text text-truncate hide-for-large">
+        ReIndev mod created by
+        <a href="https://twitter.com/silverosRe" target="_blank">Silveros</a> &
+        DasJafss.
+      </div>
+    </div>
+    <div
+      class="text-right show-for-large"
+      style="position: absolute; right: 4px; bottom: 4px; max-width: 99%"
+    >
+      <div class="title-screen-text text-truncate">
+        ReIndev mod created by
+        <a href="https://twitter.com/silverosRe" target="_blank">Silveros</a> &
+        DasJafss.
+      </div>
+    </div>
+    <div class="modal" id="questions-modal">
+      <div class="modal-header">
+        <div class="modal-header-text">Frequently Asked Questions</div>
+      </div>
+      <div class="modal-body-wrapper">
+        <div class="modal-body">
+          <div class="grid-x align-center">
+            <div class="cell medium-6">
+              <details open class="mb-2">
+                <summary data-play-sound="true">
+                  <div class="text-sm mb-4">
+                    Why is there no sound coming from the game?
+                  </div>
+                </summary>
+                <main class="menu text-muted mb-5 text-sm">
+                  <li class="mb-4">
+                    If you are using Betacraft, try disabling or enabling the
+                    "Sound & Skin proxy" in your instance settings.
+                  </li>
+                  <li class="mb-4">
+                    If you are using MultiMC, try adding the Betacraft sound &
+                    skin proxy to your JVM arguments, or try removing it if you
+                    have it already.
+                  </li>
+                </main>
+              </details>
+              <details class="mb-2">
+                <summary data-play-sound="true">
+                  <div class="text-sm mb-4">
+                    How do potions work? / How do you make potions?
+                  </div>
+                </summary>
+                <main class="menu text-muted mb-5 text-sm">
+                  <li class="mb-4">
+                    First, make a cauldron. Place it and fill it with water
+                    using a water bucket. You can start making potions by adding
+                    random ingredients to the cauldron. Almost any organic item
+                    or mob drop is considered an ingredient. Ingredients do not
+                    correspond to different effects, there is almost no way to
+                    predict what an item combination will make. A potion in a
+                    cauldron is considered 'ready' or finished when there is
+                    particles floating up from the cauldrons top side. Each
+                    potion usually has 2 effects, and both effects last for 1
+                    minute.
+                  </li>
+                  <li class="mb-4">
+                    You can alter how potions are made by using various fish.
+                    Each fish has a different unique potion effect based on what
+                    it is, using these in a potion will make an enhanced potion
+                    that guarantees it will contain the effect of whatever the
+                    fish is. Potions made with fish also last for 4 minutes and
+                    their effects are set to level 2.
+                  </li>
+                </main>
+              </details>
+              <details class="mb-2">
+                <summary data-play-sound="true">
+                  <div class="text-sm mb-4">
+                    I drank a potion but nothing happened?
+                  </div>
+                </summary>
+                <main class="menu text-muted mb-5 text-sm">
+                  <li class="mb-4">
+                    Sometimes potions can contain effects that conflict with
+                    each other. In ReIndev, our effect system will get rid of
+                    any conflicting effects from a player. For example, if a
+                    player has both resistance and fragility, it will remove
+                    both effects instantly.
+                  </li>
+                </main>
+              </details>
+              <details class="mb-2">
+                <summary data-play-sound="true">
+                  <div class="text-sm mb-4">How do gears work?</div>
+                </summary>
+                <main class="menu text-muted mb-5 text-sm">
+                  <li class="mb-4">
+                    Basically just vertical redstone. Try it out!
+                  </li>
+                </main>
+              </details>
+              <details class="mb-2">
+                <summary data-play-sound="true">
+                  <div class="text-sm mb-4">Is there a wiki?</div>
+                </summary>
+                <main class="menu text-muted mb-5 text-sm">
+                  <li class="mb-4">
+                    Yes, but it is still incomplete:
+                    <a href="#" class="text-muted"
+                      >https://minecraftreindev.fandom.com/wiki/Reindev_Wiki</a
+                    >
+                  </li>
+                </main>
+              </details>
+              <details class="mb-2">
+                <summary data-play-sound="true">
+                  <div class="text-sm mb-4">How do I craft X?</div>
+                </summary>
+                <main class="menu text-muted mb-5 text-sm">
+                  <li class="mb-4">
+                    Try checking for it on our wiki. If it isn't on the wiki,
+                    try asking in the Discord server for help.
+                  </li>
+                </main>
+              </details>
+              <details class="mb-2">
+                <summary data-play-sound="true">
+                  <div class="text-sm mb-4">
+                    Will you be adding a recipe book?
+                  </div>
+                </summary>
+                <main class="menu text-muted mb-5 text-sm">
+                  <li class="mb-4">At some point. It is in the works!</li>
+                </main>
+              </details>
+              <details class="mb-2">
+                <summary data-play-sound="true">
+                  <div class="text-sm mb-4">
+                    My game keeps crashing and there is nothing in the logs!
+                  </div>
+                </summary>
+                <main class="menu text-muted mb-5 text-sm">
+                  <li class="mb-4">
+                    If you are using Betacraft make sure you have all addons
+                    disabled. If you are using a different launcher it may be
+                    due to the launcher doing modifications to the game's code
+                    which are incompatible with ReIndev. If you are using a
+                    known good launcher like MultiMC then try changing Java
+                    version used.
+                  </li>
+                </main>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="grid-x align-center">
+          <div class="cell large-3">
+            <button
+              class="btn w-100"
+              data-toggle-modal="#questions-modal"
+              data-play-sound="true"
+            >
+              <span class="btn-text">Close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="information-modal">
+      <div class="modal-header">
+        <div class="modal-header-text">Information</div>
+      </div>
+      <div class="modal-body-wrapper">
+        <div class="modal-body">
+          <div class="mb-10">
+            <div class="mb-2 text-muted">Overview</div>
+            <div class="text-xs">
+              ReIndev is a mod for
+              <span class="text-muted">Minecraft Beta 1.7.3</span> created by
+              <span class="text-muted">Silveros</span> and
+              <span class="text-muted">DasJafss</span> that intends to bring
+              back the feelings of fun, fear, and discovery from old Minecraft.
+              ReIndev adds new blocks, items, mobs, and plenty of other new and
+              exciting features to bring back that long lost feeling of mystery.
+              ReIndev acts as more of a "fork" of Minecraft, in that it does not
+              use a mod loader.
+            </div>
+          </div>
+          <div class="mb-5 text-muted">New Features and Gameplay Additions</div>
+          <div role="carousel">
+            <button role="carousel-decrement" data-play-sound="true">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div role="carousel-content">
+              <div role="carousel-item">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div>
+                      <div class="text-lg mb-5 text-truncate">Potions</div>
+                      <img
+                        src="/reindev/assets/img/potions.png"
+                        class="card-img-header mb-5"
+                      />
+                      <div class="feature-description">
+                        <div class="text-muted text-xs mb-10">
+                          Potions have been added to game and work similarly to
+                          how potions were originally supposed to work in
+                          Minecraft, utilizing a cauldron instead of a brewing
+                          stand. Pour in some water, chuck in some random
+                          ingredients, and you're good to go!
+                        </div>
+                        <div class="text-muted text-xs">
+                          Brewing recipes, while randomized, are always the same
+                          recipe no matter what. Regular items do not correspond
+                          to any effects and are entirely random as to what
+                          effects they can produce when combined with other
+                          ingredients. Special fish can be used as brewing
+                          ingredients to "weight" or guarantee certain effects.
+                          With the usage of special "charge" items, one can
+                          alter the type of potion created in the cauldron and
+                          create special potion types such as splash potions or
+                          the new "flash flasks" and bottled flames.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div role="carousel-item">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div>
+                      <div class="text-lg mb-5 text-truncate">Gears</div>
+                      <img
+                        src="/reindev/assets/img/gears.png"
+                        class="card-img-header mb-5"
+                      />
+                      <div class="feature-description">
+                        <div class="text-muted text-xs">
+                          In ReIndev, redstone, does not exist. Circuitry and
+                          power is instead handled by gears which can be placed
+                          on walls and are powered by motor blocks. Gears
+                          function practically identical to redstone and most
+                          machines can be converted to use gears. ReIndev adds
+                          many new blocks to help condense and simplify
+                          circuitry. Some new blocks used in common gear
+                          circuitry include logic gates (AND, OR, NOT, XOR),
+                          relay blocks and wait blocks.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div role="carousel-item">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div>
+                      <div class="text-lg mb-5 text-truncate">
+                        Cubic Chunks and Floating Islands
+                      </div>
+                      <img
+                        src="/reindev/assets/img/floatlands.png"
+                        class="card-img-header mb-5"
+                      />
+                      <div class="feature-description">
+                        <div class="text-muted text-xs mb-10">
+                          One of the most impressive features ReIndev adds.
+                          Cubic chunks are chunks that are, well, cubic! Chunks
+                          in vanilla Beta 1.7.3 are 16x128x16, but are 16^3 in
+                          ReIndev. We use this for added world depth and extra
+                          world height. The default world height in ReIndev is
+                          2048 blocks! We use this added headroom for our
+                          floating islands found at around y600 in the
+                          Overworld.
+                        </div>
+                        <div class="text-muted text-xs">
+                          The floating islands in ReIndev are certainly a site
+                          to be seen! Beautiful cherry tree forests, huge icy
+                          peaks, lush grassy fields filled with flowers galore.
+                          Atop these floating islands lives a new mob, the
+                          Wyvern, a small winged dragon that hunts at night.
+                          Wyverns will tolerate players so long as its during
+                          the daytime or one does not try to harm them. During
+                          fights, wyverns shoot elemental fireballs and like to
+                          swoop down and take bites out of their targets.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div role="carousel-item">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div>
+                      <div class="text-lg mb-5 text-truncate">
+                        New Biomes and World Generation
+                      </div>
+                      <img
+                        src="/reindev/assets/img/desert.png"
+                        class="card-img-header mb-5"
+                      />
+                      <div class="feature-description">
+                        <div class="text-muted text-xs mb-10">
+                          ReIndev adds many new biomes. From desolate limestone
+                          wastelands and vast quicksand deserts, to giant ice
+                          spikes and dense tropical rainforests, ReIndev adds
+                          many new locations for you to explore.
+                        </div>
+                        <div class="text-muted text-xs">
+                          World generation in ReIndev consists of various
+                          islands scattered across short stretches of water. Not
+                          happy with the island you're on? Make a boat and head
+                          in a random direction and you'll likely find something
+                          entirely different from where you started. Most biomes
+                          in ReIndev have trees to make sure that no matter
+                          where you are that you will always have an access to
+                          wood, even in deserts!
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div role="carousel-item">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div>
+                      <div class="text-lg mb-5 text-truncate">
+                        New Blocks and Smaller Features
+                      </div>
+                      <img
+                        src="/reindev/assets/img/bee.png"
+                        class="card-img-header mb-5"
+                      />
+                      <div class="feature-description">
+                        <div class="text-muted text-xs mb-10">
+                          ReIndev adds many new building blocks: basalt, stucco,
+                          limestone, colored planks, brimstone, and soul
+                          sandstone just to name a few! ReIndev also adds many
+                          utility and quality-of-life blocks and items, such as
+                          crates which act as a sort of "shulker box", the
+                          incinerator which converts organic materials into ash
+                          and coal, and the wrench which changes the direction
+                          or properties of a block.
+                        </div>
+                        <div class="text-muted text-xs">
+                          Most tools in ReIndev have a special ability or quirk
+                          to them to help them stand out and give them a unique
+                          purpose or function, or to fill niches that would
+                          otherwise be covered by enchantments. Stone tools have
+                          a "fortune" effect on certain blocks, golden tools
+                          have a "silk touch" ability, diamond tools get faster
+                          the more you use them, and molten tools (a new tool
+                          set added by ReIndev) have a "smelt touch" and "fire
+                          aspect" ability that automatically smelts blocks and
+                          inflicts fire onto mobs.
+                        </div>
+                        <div class="text-muted text-xs">
+                          ReIndev also adds some technical quality-of-life
+                          features over Beta 1.7.3 such as an improved
+                          multiplayer experience with less latency and bugs,
+                          single player commands and a creative mode with
+                          flight, a modern styled texture system, world types,
+                          and much more.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button role="carousel-increment" data-play-sound="true">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="grid-x align-center">
+          <div class="cell large-3">
+            <button
+              class="btn w-100"
+              data-toggle-modal="#information-modal"
+              data-play-sound="true"
+            >
+              <span class="btn-text">Close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="download-modal">
+      <div class="modal-header">
+        <div class="modal-header-text">Download</div>
+      </div>
+      <div class="modal-body-wrapper">
+        <div class="modal-body">
+          <div class="grid-x grid-margin-x grid-margin-y align-center">
+            <div class="cell large-3 mt-0">
+              <div class="card mb-10">
+                <div class="card-body">
+                  <div class="text-lg mb-5">Download Latest Release</div>
+                  <img
+                    src="/reindev/assets/img/website-bg.png"
+                    class="card-img-header mb-5"
+                  />
+                  <a href="#" class="btn btn-sm w-100" data-play-sound="true">
+                    <span class="btn-text">Download Latest Release</span>
+                  </a>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body align-justify">
+                  <div>
+                    <div class="text-lg mb-3">Download</div>
+                    <details open class="mb-2">
+                      <summary data-play-sound="true">
+                        <div class="text-sm">
+                          ReIndev 2.8.1
+                          <span class="text-xxs text-muted text-uppercase"
+                            >Latest Release</span
+                          >
+                        </div>
+                      </summary>
+                      <main class="menu mb-5">
+                        <li class="text-xs text-muted">Drawers</li>
+                        <li class="text-xs text-muted">Modern Skin Support</li>
+                        <li class="text-xs text-muted">New Blocks</li>
+                        <li class="text-xs text-muted">Better Performance</li>
+                        <li class="text-xs text-muted">"Legacy" World Type</li>
+                        <li class="text-xs text-muted">Loads of Bug Fixes</li>
+                        <div class="text-center mb-5">
+                          <a
+                            href="#"
+                            class="text-xxs text-muted text-uppercase text-decoration-none"
+                            ><i class="fas fa-chevron-right"></i> Click here to
+                            read the full changelog
+                            <i class="fas fa-chevron-left"></i
+                          ></a>
+                        </div>
+                        <a
+                          href="#"
+                          class="btn btn-sm w-100"
+                          data-play-sound="true"
+                        >
+                          <span class="btn-text">Download</span>
+                        </a>
+                      </main>
+                    </details>
+                    <details class="mb-2">
+                      <summary data-play-sound="true">
+                        <div class="text-sm">ReIndev 2.8.0</div>
+                      </summary>
+                      <main class="menu mb-5">
+                        <li class="text-xs text-muted">insert changes here</li>
+                        <li class="text-xs text-muted">insert changes here</li>
+                        <li class="text-xs text-muted">insert changes here</li>
+                        <li class="text-xs text-muted">insert changes here</li>
+                        <li class="text-xs text-muted">insert changes here</li>
+                        <li class="text-xs text-muted">insert changes here</li>
+                        <div class="text-center mb-5">
+                          <a
+                            href="#"
+                            class="text-xxs text-muted text-uppercase text-decoration-none"
+                            ><i class="fas fa-chevron-right"></i> Click here to
+                            read the full changelog
+                            <i class="fas fa-chevron-left"></i
+                          ></a>
+                        </div>
+                        <a
+                          href="#"
+                          class="btn btn-sm w-100"
+                          data-play-sound="true"
+                        >
+                          <span class="btn-text">Download</span>
+                        </a>
+                      </main>
+                    </details>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cell large-3 mt-0">
+              <div class="card">
+                <div class="card-body">
+                  <div class="text-lg mb-3">Installation Instructions</div>
+                  <div class="text-sm">
+                    <details class="mb-2">
+                      <summary data-play-sound="true">
+                        <div class="text-sm">
+                          MultiMC / Prism Launcher
+                          <span class="text-xxs text-muted text-uppercase"
+                            >Recommended</span
+                          >
+                        </div>
+                      </summary>
+                      <main class="menu mb-5">
+                        <li class="text-xs text-muted">
+                          Create a new b1.7.3 instance
+                        </li>
+                        <li class="text-xs text-muted">
+                          Select the newly created instance
+                        </li>
+                        <li class="text-xs text-muted">
+                          Click "Edit Instance"
+                        </li>
+                        <li class="text-xs text-muted">
+                          Click the "Versions" tab
+                        </li>
+                        <li class="text-xs text-muted">
+                          Click "Replace minecraft.jar" and locate your ReIndev
+                          .jar file
+                        </li>
+                      </main>
+                    </details>
+                    <details class="mb-2">
+                      <summary data-play-sound="true">
+                        <div class="text-sm">
+                          Betacraft
+                          <span class="text-xxs text-muted text-uppercase"
+                            >Automatic Installation</span
+                          >
+                        </div>
+                      </summary>
+                      <main class="menu mb-5">
+                        <li class="text-xs text-muted">
+                          Click "Edit Instance"
+                        </li>
+                        <li class="text-xs text-muted">
+                          Click "Mods repository"
+                        </li>
+                        <li class="text-xs text-muted">
+                          Open the ReIndev section
+                        </li>
+                        <li class="text-xs text-muted">
+                          Select the latest release, and then click "Load"
+                        </li>
+                      </main>
+                    </details>
+                    <details class="mb-2">
+                      <summary data-play-sound="true">
+                        <div class="text-sm">
+                          Betacraft
+                          <span class="text-xxs text-muted text-uppercase"
+                            >Manual Installation</span
+                          >
+                        </div>
+                      </summary>
+                      <main class="menu mb-5">
+                        <li class="text-xs text-muted">
+                          Locate your ".betacraft" folder (located in app data)
+                        </li>
+                        <li class="text-xs text-muted">
+                          Drop your ReIndev .jar file into the "versions" folder
+                        </li>
+                        <li class="text-xs text-muted">
+                          Reopen Betacraft if it's already opened
+                        </li>
+                        <li class="text-xs text-muted">
+                          Click "Select version" and then locate ReIndev
+                        </li>
+                      </main>
+                    </details>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="grid-x align-center">
+          <div class="cell large-3">
+            <button
+              class="btn w-100"
+              data-toggle-modal="#download-modal"
+              data-play-sound="true"
+            >
+              <span class="btn-text">Close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="wrapper">
+      <main class="container">
+        <main class="logo-wrapper">
+          <img src="/reindev/assets/img/minecraft.png" class="top-logo" />
+          <img src="/reindev/assets/img/reindev.png" class="bottom-logo" />
+          <div class="splash-text show-for-large" id="random-pool"></div>
+        </main>
+        <main class="main-buttons">
+          <div class="buttons">
+            <button
+              class="btn w-100"
+              data-toggle-modal="#download-modal"
+              data-play-sound="true"
+            >
+              <span class="btn-text">Download</span>
+            </button>
+            <button
+              class="btn w-100"
+              data-toggle-modal="#information-modal"
+              data-play-sound="true"
+            >
+              <span class="btn-text">Information</span>
+            </button>
+            <button
+              class="btn w-100"
+              data-toggle-modal="#questions-modal"
+              data-play-sound="true"
+            >
+              <span class="btn-text">Frequently Asked Questions</span>
+            </button>
+          </div>
+        </main>
+      </main>
+    </main>
+    <script src="/reindev/assets/js/reindev.js"></script>
+  </body>
+</html>
