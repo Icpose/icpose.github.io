@@ -405,7 +405,9 @@ li::before {
 }
 
 .modal:not(.active) {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 .modal {
   position: absolute;
