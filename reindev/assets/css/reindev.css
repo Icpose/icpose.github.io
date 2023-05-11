@@ -239,8 +239,6 @@ details[open] > summary::after {
 
   cursor: default;
 
-  font-size: 18px;
-
   box-shadow: 0 0 0 2px #000000;
 
   height: 44px;
@@ -277,7 +275,8 @@ details[open] > summary::after {
   display: inline-block;
   justify-content: center;
   align-items: center;
-  text-shadow: 1.5px 1.5px 0 rgb(0, 0, 0, 50%);
+  text-shadow: 2px 2px 0 rgb(0, 0, 0, 50%);
+  font-size: 19px;
   height: 44px;
   line-height: 44px;
   color: #e0dfe0;
@@ -287,8 +286,10 @@ details[open] > summary::after {
   margin-top: -4px;
 }
 .btn.btn-sm {
-  font-size: 16px;
   height: 38px;
+}
+.btn.btn-sm .btn-text {
+  font-size: 16px;
 }
 
 .text-truncate {
