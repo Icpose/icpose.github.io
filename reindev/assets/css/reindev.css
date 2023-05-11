@@ -38,14 +38,6 @@ body {
   }
 }
 
-#preload-dirt {
-  background-image: url("/bta/assets/img/dirt.png");
-  opacity: 0;
-  pointer-events: none;
-  height: 20px;
-  width: 20px;
-}
-
 .website-panorama .panorama-0::before {
   display: block;
   content: "";

@@ -1,0 +1,21 @@
+[
+  {
+    "name": "ReIndev 2.8.1_01",
+    "downloadLink": "#",
+    "changelogLink": "#",
+    "features": ["Test 1", "Test 2", "Test 3"],
+    "latest": true
+  },
+  {
+    "name": "ReIndev 2.8.1",
+    "downloadLink": "#",
+    "changelogLink": "#",
+    "features": ["Test 1", "Test 2", "Test 3"]
+  },
+  {
+    "name": "ReIndev 2.8",
+    "downloadLink": "#",
+    "changelogLink": "#",
+    "features": ["Test 1", "Test 2", "Test 3"]
+  }
+]

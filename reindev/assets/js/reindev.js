@@ -282,3 +282,43 @@ document.querySelectorAll("details").forEach((details) => {
     }
   });
 });
+
+fetch("/reindev/assets/js/versions.json")
+  .then((response) => response.json())
+  .then((data) => {
+    const gameDivs = data
+      .map(
+        (game) => `
+        <details class="mb-2" ${game.latest ? "open" : ""}>
+          <summary data-play-sound="true">
+            <div class="text-sm">${game.name} ${
+          game.latest
+            ? "<span class='text-xxs text-muted text-uppercase'>Latest Release</span>"
+            : ""
+        }</div>
+          </summary>
+          <main class="menu mb-5">
+            <div class="text-xs text-muted">
+              ${game.features.map((feature) => `<li>${feature}</li>`).join("")}
+            </div>
+            <div class="text-center mb-5">
+              <a href="${
+                game.changelogLink
+              }" class="text-xxs text-muted text-uppercase text-decoration-none">
+                <i class="fas fa-chevron-right"></i> Click here to read the full changelog
+                <i class="fas fa-chevron-left"></i>
+              </a>
+            </div>
+            <a href="${
+              game.downloadLink
+            }" class="btn btn-sm w-100" data-play-sound="true">
+              <span class="btn-text">Download</span>
+            </a>
+          </main>
+        </details>
+    `
+      )
+      .join("");
+    document.getElementById("downloadVersions").innerHTML = gameDivs;
+  })
+  .catch((error) => console.error(error));

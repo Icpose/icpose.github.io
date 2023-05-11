@@ -14,7 +14,6 @@
   </head>
   <body>
     <main class="loading-screen">
-      <main id="preload-dirt"></main>
       <img
         src="https://cdn.discordapp.com/attachments/1087026342157111387/1103658133106208869/image.png"
         width="300"
@@ -33,25 +32,41 @@
       class="social-buttons"
       style="position: absolute; left: 4px; top: 4px; max-width: 99%"
     >
-      <a href="#" class="social-button discord">
+      <a
+        href="https://discord.gg/sN55HeExP6"
+        class="social-button discord"
+        data-play-sound="true"
+      >
         <span class="icon"><img src="/reindev/assets/img/discord.png" /></span>
         <span class="social-text">
           <div class="social-text-content">Discord Server</div>
         </span>
       </a>
-      <a href="#" class="social-button youtube">
+      <a
+        href="https://www.youtube.com/@silveros"
+        class="social-button youtube"
+        data-play-sound="true"
+      >
         <span class="icon"><img src="/reindev/assets/img/youtube.png" /></span>
         <span class="social-text">
           <div class="social-text-content">YouTube Channel</div>
         </span>
       </a>
-      <a href="#" class="social-button reddit">
+      <a
+        href="https://www.reddit.com/r/reindev/"
+        class="social-button reddit"
+        data-play-sound="true"
+      >
         <span class="icon"><img src="/reindev/assets/img/reddit.png" /></span>
         <span class="social-text">
           <div class="social-text-content">Reddit</div>
         </span>
       </a>
-      <a href="#" class="social-button kofi">
+      <a
+        href="https://ko-fi.com/silveros"
+        class="social-button kofi"
+        data-play-sound="true"
+      >
         <span class="icon"><img src="/reindev/assets/img/kofi.png" /></span>
         <span class="social-text">
           <div class="social-text-content">Support us on Ko-fi</div>
@@ -90,7 +105,7 @@
         <div class="modal-body">
           <div class="grid-x align-center">
             <div class="cell medium-6">
-              <details open class="mb-2">
+              <details class="mb-2">
                 <summary data-play-sound="true">
                   <div class="text-sm mb-4">
                     Why is there no sound coming from the game?
@@ -478,73 +493,9 @@
                 </div>
               </div>
               <div class="card">
-                <div class="card-body align-justify">
-                  <div>
-                    <div class="text-lg mb-3">Download</div>
-                    <details open class="mb-2">
-                      <summary data-play-sound="true">
-                        <div class="text-sm">
-                          ReIndev 2.8.1
-                          <span class="text-xxs text-muted text-uppercase"
-                            >Latest Release</span
-                          >
-                        </div>
-                      </summary>
-                      <main class="menu mb-5">
-                        <li class="text-xs text-muted">Drawers</li>
-                        <li class="text-xs text-muted">Modern Skin Support</li>
-                        <li class="text-xs text-muted">New Blocks</li>
-                        <li class="text-xs text-muted">Better Performance</li>
-                        <li class="text-xs text-muted">"Legacy" World Type</li>
-                        <li class="text-xs text-muted">Loads of Bug Fixes</li>
-                        <div class="text-center mb-5">
-                          <a
-                            href="#"
-                            class="text-xxs text-muted text-uppercase text-decoration-none"
-                            ><i class="fas fa-chevron-right"></i> Click here to
-                            read the full changelog
-                            <i class="fas fa-chevron-left"></i
-                          ></a>
-                        </div>
-                        <a
-                          href="#"
-                          class="btn btn-sm w-100"
-                          data-play-sound="true"
-                        >
-                          <span class="btn-text">Download</span>
-                        </a>
-                      </main>
-                    </details>
-                    <details class="mb-2">
-                      <summary data-play-sound="true">
-                        <div class="text-sm">ReIndev 2.8.0</div>
-                      </summary>
-                      <main class="menu mb-5">
-                        <li class="text-xs text-muted">insert changes here</li>
-                        <li class="text-xs text-muted">insert changes here</li>
-                        <li class="text-xs text-muted">insert changes here</li>
-                        <li class="text-xs text-muted">insert changes here</li>
-                        <li class="text-xs text-muted">insert changes here</li>
-                        <li class="text-xs text-muted">insert changes here</li>
-                        <div class="text-center mb-5">
-                          <a
-                            href="#"
-                            class="text-xxs text-muted text-uppercase text-decoration-none"
-                            ><i class="fas fa-chevron-right"></i> Click here to
-                            read the full changelog
-                            <i class="fas fa-chevron-left"></i
-                          ></a>
-                        </div>
-                        <a
-                          href="#"
-                          class="btn btn-sm w-100"
-                          data-play-sound="true"
-                        >
-                          <span class="btn-text">Download</span>
-                        </a>
-                      </main>
-                    </details>
-                  </div>
+                <div class="card-body">
+                  <div class="text-lg mb-3">Download</div>
+                  <div id="downloadVersions"></div>
                 </div>
               </div>
             </div>
